@@ -21,57 +21,57 @@ export class PokemonsListComponent implements OnInit {
     {
       id: 4,
       name: 'Charmander',
-      damage: 15,
+      damage: 25,
     },
     {
       id: 7,
       name: 'Squirtle',
-      damage: 15,
+      damage: 35,
     },
     {
       id: 32,
       name: 'Nidoran',
-      damage: 15,
+      damage: 45,
     },
     {
       id: 39,
       name: 'Jigglypuff',
-      damage: 15,
+      damage: 55,
     },
     {
       id: 116,
       name: 'Horsea',
-      damage: 15,
+      damage: 10,
     },
     {
       id: 153,
       name: 'Bayleef',
-      damage: 15,
+      damage: 20,
     },
     {
       id: 164,
       name: 'Noctowl',
-      damage: 15,
+      damage: 30,
     },
     {
       id: 172,
       name: 'Pichu',
-      damage: 15,
+      damage: 40,
     },
     {
       id: 182,
       name: 'Bellossom',
-      damage: 15,
+      damage: 50,
     },
     {
       id: 261,
       name: 'Poochyena',
-      damage: 15,
+      damage: 60,
     },
     {
       id: 300,
       name: 'Skitty',
-      damage: 15,
+      damage: 70,
     }
   ];
   constructor() { }
