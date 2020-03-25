@@ -7,7 +7,7 @@
           </div>
           <img mat-card-image src="../../../assets/pokemons/{{ pokemon.id }}.png"  alt="Pokemon {{ pokemon.name }}">
           <mat-card-actions>
-            <button mat-button>СATCH</button>
+            <button #button mat-button (click)="printInConsole(button, pokemon.name)">СATCH</button>
           </mat-card-actions>
         </mat-card>
   </mat-grid-tile>

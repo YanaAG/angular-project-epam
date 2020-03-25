@@ -79,4 +79,13 @@ export class PokemonsListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  printInConsole(button, pokemonName): void {
+    if (button._elementRef.nativeElement.innerText === 'СATCH') {
+      button._elementRef.nativeElement.innerText = 'LET GO';
+      console.log(`Покемон ${pokemonName} был пойман`);
+    } else {
+      button._elementRef.nativeElement.innerText = 'СATCH';
+      console.log(`Покемон ${pokemonName} был отпущен`);
+    }
+  }
 }
