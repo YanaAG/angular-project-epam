@@ -1,0 +1,18 @@
+.pokemon-card {
+  width: 75%;
+}
+
+.mat-card-image {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.pokemon-card-header {
+  text-align: center;
+}
+
+.mat-button {
+  width: 100%;
+  background-color: lavender;
+}

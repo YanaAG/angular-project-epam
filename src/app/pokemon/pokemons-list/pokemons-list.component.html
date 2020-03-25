@@ -1,1 +1,14 @@
-<p>pokemons-list works!</p>
+<mat-grid-list cols="4" rowHeight="420px">
+  <mat-grid-tile *ngFor="let pokemon of pokemons">
+        <mat-card class="pokemon-card">
+          <div class="pokemon-card-header">
+              <mat-card-title>{{ pokemon.name }}</mat-card-title>
+              <mat-card-subtitle>Damage: {{ pokemon.damage }}</mat-card-subtitle>
+          </div>
+          <img mat-card-image src="../../../assets/pokemons/{{ pokemon.id }}.png"  alt="Pokemon {{ pokemon.name }}">
+          <mat-card-actions>
+            <button mat-button>СATCH</button>
+          </mat-card-actions>
+        </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
