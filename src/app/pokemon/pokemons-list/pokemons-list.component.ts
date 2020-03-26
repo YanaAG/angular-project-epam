@@ -12,6 +12,7 @@ export interface Pokemon {
   styleUrls: ['./pokemons-list.component.css']
 })
 export class PokemonsListComponent implements OnInit {
+  buttonText = 'TEXT LIST';
   pokemons: Pokemon[] = [
     {
       id: 1,
@@ -86,6 +87,14 @@ export class PokemonsListComponent implements OnInit {
     } else {
       button._elementRef.nativeElement.innerText = 'СATCH';
       console.log(`Покемон ${pokemonName} был отпущен`);
+    }
+  }
+
+  changeDisplay(): void {
+    if (this.buttonText === 'TEXT LIST') {
+      this.buttonText = 'LIST OF CARDS';
+    } else {
+      this.buttonText = 'TEXT LIST';
     }
   }
 }

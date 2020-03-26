@@ -16,3 +16,22 @@
   width: 100%;
   background-color: lavender;
 }
+
+.mat-stroked-button {
+  color: rgba(0, 0, 0, 0.87);
+  border: none;
+  margin-left: 25px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  width: 150px;
+  background-color: lavender;
+}
+
+.mat-list {
+  margin-left: 15px;
+}
+
+.mat-list-item {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}

@@ -1,4 +1,6 @@
-<mat-grid-list cols="4" rowHeight="420px">
+<button mat-stroked-button (click)="changeDisplay()">{{ buttonText }}</button>
+
+<mat-grid-list *ngIf="buttonText == 'TEXT LIST'" cols="4" rowHeight="420px">
   <mat-grid-tile *ngFor="let pokemon of pokemons">
         <mat-card appBorder [damage]="pokemon.damage" class="pokemon-card">
           <div class="pokemon-card-header">
@@ -12,3 +14,11 @@
         </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+
+<mat-list *ngIf="buttonText == 'LIST OF CARDS'">
+  <mat-list-item *ngFor="let pokemon of pokemons">
+    <img matListAvatar style="width: 50px; height: 50px" src="../../../assets/pokemons/{{ pokemon.id }}.png"  alt="Pokemon {{ pokemon.name }}">
+    <h3 mat-line style="font-size: 22px"> {{pokemon.name}} </h3>
+    <mat-divider style="border-top-width: medium; margin: -8px"></mat-divider>
+  </mat-list-item>
+</mat-list>
