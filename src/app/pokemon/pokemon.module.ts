@@ -15,7 +15,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 @NgModule({
   declarations: [HeaderComponent, PokemonCardComponent, PokemonsListComponent, BorderDirective],
   exports: [
-    PokemonsListComponent
+    PokemonsListComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
