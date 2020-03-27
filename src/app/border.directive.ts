@@ -16,7 +16,7 @@ export class BorderDirective {
   // tslint:disable-next-line:use-lifecycle-interface
   ngOnInit() {
     if (this.damage > 50) {
-      this.renderer.setStyle(this.el.nativeElement, 'border', '10px solid red');
+      this.renderer.setStyle(this.el.nativeElement, 'border', '5px solid red');
     }
   }
 }

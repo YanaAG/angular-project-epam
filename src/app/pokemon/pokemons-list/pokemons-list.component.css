@@ -1,6 +1,7 @@
 .mat-stroked-button {
   height: 40px;
 }
+
 .pokemon-card {
   width: 75%;
 }
@@ -18,6 +19,11 @@
 .mat-button {
   width: 100%;
   background-color: lavender;
+}
+
+.button-text-list {
+  width: 150px;
+  margin-left: 10px;
 }
 
 .mat-stroked-button {
