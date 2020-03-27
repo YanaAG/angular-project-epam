@@ -45,3 +45,27 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
+
+.mat-list-base .mat-list-item .mat-list-avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.text-list-pokemon-name {
+  font-size: 22px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.text-list-pokemon-damage {
+  margin-bottom: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.mat-list-base .mat-list-item .mat-divider {
+  border-top-width: medium;
+  margin: -8px;
+}

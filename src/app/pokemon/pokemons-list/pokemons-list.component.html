@@ -17,12 +17,12 @@
 
 <mat-list *ngIf="buttonText == 'LIST OF CARDS'">
   <mat-list-item *ngFor="let pokemon of pokemons">
-    <img matListAvatar style="width: 50px; height: 50px; margin-right: 5px" src="../../../assets/pokemons/{{ pokemon.id }}.png"  alt="Pokemon {{ pokemon.name }}">
+    <img matListAvatar src="../../../assets/pokemons/{{ pokemon.id }}.png"  alt="Pokemon {{ pokemon.name }}">
     <div appBorder [damage]="pokemon.damage">
-      <h3 mat-line style="font-size: 22px; margin-bottom: 0; margin-left: 10px; margin-right: 10px"> {{pokemon.name}} </h3>
-      <h5 style="margin-bottom: 0; margin-left: 10px; margin-right: 10px">Damage: {{ pokemon.damage }}</h5>
+      <h3 mat-line class="text-list-pokemon-name"> {{pokemon.name}} </h3>
+      <h5 class="text-list-pokemon-damage">Damage: {{ pokemon.damage }}</h5>
     </div>
     <button class="button-text-list" #button mat-button (click)="printInConsole(button, pokemon.name)">СATCH</button>
-    <mat-divider style="border-top-width: medium; margin: -8px"></mat-divider>
+    <mat-divider></mat-divider>
   </mat-list-item>
 </mat-list>
