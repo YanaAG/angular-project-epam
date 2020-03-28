@@ -1,0 +1,12 @@
+.mat-toolbar {
+  background: linear-gradient(to bottom, lavender, white);
+  color: rgba(0, 0, 0, 0.67);
+}
+
+.header-title {
+  padding-right: 20px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
