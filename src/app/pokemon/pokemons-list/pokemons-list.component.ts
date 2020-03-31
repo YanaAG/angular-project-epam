@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 
 export interface Pokemon {
   id: number;
@@ -9,7 +9,8 @@ export interface Pokemon {
 @Component({
   selector: 'app-pokemons-list',
   templateUrl: './pokemons-list.component.html',
-  styleUrls: ['./pokemons-list.component.css']
+  styleUrls: ['./pokemons-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PokemonsListComponent implements OnInit {
   buttonText = 'TEXT LIST';
