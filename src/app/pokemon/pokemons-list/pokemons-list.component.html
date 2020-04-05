@@ -1,5 +1,7 @@
 <button mat-stroked-button (click)="changeDisplay()">{{ buttonText }}</button>
 
+<app-pokemon-search></app-pokemon-search>
+
 <mat-grid-list *ngIf="buttonText == 'TEXT LIST'" cols="4" rowHeight="420px">
   <mat-grid-tile *ngFor="let pokemon of pokemons">
         <mat-card appBorder [damage]="pokemon.damage" class="pokemon-card">
