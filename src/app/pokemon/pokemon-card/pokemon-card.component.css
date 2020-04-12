@@ -36,12 +36,21 @@
 }
 
 .button-text-list {
-  width: 500px;
+  background: lavender;
+  width: 240px;
+}
+
+.button-1 {
+  margin-right: 10px;
+}
+
+.button-2 {
+  margin-left: 10px;
 }
 
 .pokemon-button {
   width: 500px;
   margin: 25px auto auto;
-  background: lavender;
   color: rgba(0, 0, 0, 0.87);
+  text-align: center;
 }
