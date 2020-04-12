@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {Pokemon, PokemonService} from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemons-list',
   templateUrl: './pokemons-list.component.html',
   styleUrls: ['./pokemons-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [PokemonService]
 })
 export class PokemonsListComponent implements OnInit {
