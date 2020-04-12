@@ -10,6 +10,7 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 import {MatInputModule} from '@angular/material/input';
+import {AppRoutingModule} from '../app-routing/app-routing.module';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatListModule,
     MatIconModule,
-    MatInputModule
+    MatInputModule,
+    AppRoutingModule,
   ]
 })
 export class PokemonModule { }

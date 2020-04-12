@@ -1,10 +1,9 @@
-<app-header></app-header>
 <div class="pokemon">
   <div class="div-pokemon-image">
-    <img mat-card-image class="pokemon-image" src="../../../assets/pokemons/{{ pokemons[0].id }}.png" alt="Pokemon {{ pokemons[0].name }}">
+    <img mat-card-image class="pokemon-image" src="../../../assets/pokemons/{{ pokemon.id }}.png" alt="Pokemon {{ pokemon.name }}">
   </div>
   <div class="pokemon-info">
-    <h1 class="pokemon-name"> {{pokemons[0].name}} </h1>
+    <h1 class="pokemon-name"> {{pokemon.name}} </h1>
     <div class="pokemon-detailed-info"></div>
     <div class="pokemon-button">
       <button mat-button class="button-text-list">СATCH</button>

@@ -4,7 +4,7 @@
 
 <mat-grid-list *ngIf="buttonText == 'TEXT LIST'" cols="4" rowHeight="420px">
   <mat-grid-tile *ngFor="let pokemon of pokemons">
-        <mat-card appBorder [damage]="pokemon.damage" class="pokemon-card">
+        <mat-card routerLink="/pokemon/{{ pokemon.id }}" appBorder [damage]="pokemon.damage" class="pokemon-card">
           <div class="pokemon-card-header">
               <mat-card-title>{{ pokemon.name }}</mat-card-title>
               <mat-card-subtitle>Damage: {{ pokemon.damage }}</mat-card-subtitle>

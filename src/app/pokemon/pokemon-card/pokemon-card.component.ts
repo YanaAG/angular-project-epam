@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Pokemon} from '../pokemons-list/pokemons-list.component';
+import {Pokemon, PokemonService} from '../pokemon.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -7,16 +8,16 @@ import {Pokemon} from '../pokemons-list/pokemons-list.component';
   styleUrls: ['./pokemon-card.component.css']
 })
 export class PokemonCardComponent implements OnInit {
-  pokemons: Pokemon[] = [
-    {
-      id: 1,
-      name: 'Bulbasaur',
-      damage: 15,
-    }
-  ];
-  constructor() { }
+  pokemon: Pokemon;
+  constructor(private pokemonService: PokemonService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.getPokemon();
+  }
+
+  getPokemon(): void {
+    const id = this.route.snapshot.params.id;
+    this.pokemon = this.pokemonService.getById(Number(id));
   }
 
 }

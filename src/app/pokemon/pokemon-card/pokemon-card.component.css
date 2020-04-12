@@ -5,12 +5,13 @@
 .div-pokemon-image {
   float: left;
   width: 50%;
+  margin-top: 66px;
 }
 
 .pokemon-image {
   border: groove;
+  width: 475px;
   margin-left: 130px;
-  margin-top: 50px;
 }
 
 .pokemon-info {
