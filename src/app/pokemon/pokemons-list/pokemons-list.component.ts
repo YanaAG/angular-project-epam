@@ -38,4 +38,8 @@ export class PokemonsListComponent implements OnInit {
       this.buttonText = 'TEXT LIST';
     }
   }
+
+  filter(pokemon: Pokemon[]): void {
+    this.pokemons = pokemon;
+  }
 }

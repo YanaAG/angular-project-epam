@@ -1,7 +1,10 @@
 <div class="search-field">
   <mat-form-field appearance="outline">
     <mat-label>Search pokemon</mat-label>
-    <input matInput placeholder="Which pokemon do you want to find?">
+    <input [(ngModel)]="pokemonName" matInput placeholder="Which pokemon do you want to find?">
+    <button mat-button *ngIf="pokemonName" matSuffix mat-icon-button aria-label="Clear" (click)="clearInput()">
+      <mat-icon>close</mat-icon>
+    </button>
   </mat-form-field>
-  <button class="search-button" mat-stroked-button>SEARCH</button>
+  <button class="search-button" mat-stroked-button (click)="findPokemon()">SEARCH</button>
 </div>
