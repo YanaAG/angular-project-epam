@@ -1,0 +1,56 @@
+.pokemon {
+  height: 85%;
+}
+
+.div-pokemon-image {
+  float: left;
+  width: 50%;
+  margin-top: 66px;
+}
+
+.pokemon-image {
+  border: groove;
+  width: 475px;
+  margin-left: 130px;
+}
+
+.pokemon-info {
+  float: left;
+  width: 40%;
+  margin-top: 50px;
+  padding-left: 35px;
+}
+
+.pokemon-name {
+  border: groove;
+  text-align: center;
+  width: 500px;
+  margin: auto;
+}
+
+.pokemon-detailed-info {
+  width: 500px;
+  height: 300px;
+  border: groove;
+  margin: 25px auto auto;
+}
+
+.button-text-list {
+  background: lavender;
+  width: 240px;
+}
+
+.button-1 {
+  margin-right: 10px;
+}
+
+.button-2 {
+  margin-left: 10px;
+}
+
+.pokemon-button {
+  width: 500px;
+  margin: 25px auto auto;
+  color: rgba(0, 0, 0, 0.87);
+  text-align: center;
+}
