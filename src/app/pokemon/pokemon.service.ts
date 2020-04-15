@@ -98,4 +98,13 @@ export class PokemonService {
   filter(pokemonName: string): Pokemon[] {
     return this.pokemons.filter((p) => p.name === pokemonName);
   }
+
+  update(pokemon: Pokemon): void {
+    for (let i = 0; i < this.pokemons.length; i++) {
+      if (this.pokemons[i].id === pokemon.id) {
+        this.pokemons[i] = pokemon;
+        break;
+      }
+    }
+  }
 }

@@ -11,11 +11,14 @@ import {MatIconModule} from '@angular/material/icon';
 import { PokemonSearchComponent } from './pokemon-search/pokemon-search.component';
 import {MatInputModule} from '@angular/material/input';
 import {AppRoutingModule} from '../app-routing/app-routing.module';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { PokemonEditComponent } from './pokemon-edit/pokemon-edit.component';
+import { PokemonPopupComponent } from './pokemon-popup/pokemon-popup.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
-  declarations: [PokemonCardComponent, PokemonsListComponent, BorderDirective, PokemonSearchComponent],
+  declarations: [PokemonCardComponent, PokemonsListComponent, BorderDirective, PokemonSearchComponent, PokemonEditComponent, PokemonPopupComponent],
   exports: [
     PokemonsListComponent
   ],
@@ -29,6 +32,8 @@ import {FormsModule} from '@angular/forms';
     MatInputModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    MatDialogModule,
   ]
 })
 export class PokemonModule { }
