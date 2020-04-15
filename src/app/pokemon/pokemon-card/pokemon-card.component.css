@@ -54,3 +54,18 @@
   color: rgba(0, 0, 0, 0.87);
   text-align: center;
 }
+
+.detailed-info-label {
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin-top: 15px;
+  font-style: italic;
+}
+
+.detailed-info-value {
+  float: left;
+  width: 35%;
+  margin-top: 3px;
+  text-align: center;
+}

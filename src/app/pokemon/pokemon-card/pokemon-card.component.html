@@ -4,7 +4,20 @@
   </div>
   <div class="pokemon-info">
     <h1 class="pokemon-name"> {{pokemon.name}} </h1>
-    <div class="pokemon-detailed-info"></div>
+    <div class="pokemon-detailed-info">
+      <div>
+        <h3 class="detailed-info-label">Pokemon damage:</h3>
+        <mat-form-field class="detailed-info-value">
+          <input matInput disabled value="{{pokemon.damage}}">
+        </mat-form-field>
+      </div>
+      <div>
+        <h3 class="detailed-info-label">Pokemon creation date:</h3>
+        <mat-form-field class="detailed-info-value">
+          <input matInput disabled value="{{pokemon.creationDate.toDateString()}}">
+        </mat-form-field>
+      </div>
+    </div>
     <div class="pokemon-button">
       <button mat-button class="button-text-list button-1">СATCH</button>
       <button mat-button class="button-text-list button-2">EDIT</button>
