@@ -25,7 +25,10 @@
   border: groove;
   text-align: center;
   width: 500px;
-  margin: auto;
+  margin-left: 19px;
+  height: 30px;
+  font-weight: 400;
+  font-size: 24px;
 }
 
 .pokemon-detailed-info {
