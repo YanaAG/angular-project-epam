@@ -11,7 +11,8 @@
           </div>
           <img routerLink="/pokemon/{{ pokemon.id }}" mat-card-image src="../../../assets/pokemons/{{ pokemon.id }}.png"  alt="Pokemon {{ pokemon.name }}">
           <mat-card-actions class="buttons">
-            <button #button mat-button (click)="printInConsole(button, pokemon.name)">СATCH</button>
+            <button *ngIf="!pokemon.caught" #button mat-button (click)="printInConsole(button, pokemon)">СATCH</button>
+            <button *ngIf="pokemon.caught" #button mat-button (click)="printInConsole(button, pokemon)">LET GO</button>
             <button routerLink="/edit/{{ pokemon.id }}" mat-button>EDIT</button>
           </mat-card-actions>
         </mat-card>

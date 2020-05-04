@@ -15,9 +15,17 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { PokemonEditComponent } from './pokemon-edit/pokemon-edit.component';
 import { PokemonPopupComponent } from './pokemon-popup/pokemon-popup.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {StoreModule} from '@ngrx/store';
+import {PokemonReducer} from '../@ngrx/pokemons';
+import {EffectsModule} from '@ngrx/effects';
+import {PokemonEffects} from '../@ngrx/pokemons/pokemons.effects';
+import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonService } from './pokemon.service';
 
 
 @NgModule({
+  // tslint:disable-next-line:max-line-length
   declarations: [PokemonCardComponent, PokemonsListComponent, BorderDirective, PokemonSearchComponent, PokemonEditComponent, PokemonPopupComponent],
   exports: [
     PokemonsListComponent
@@ -34,6 +42,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormsModule,
     ReactiveFormsModule,
     MatDialogModule,
-  ]
+    HttpClientModule,
+    StoreModule.forRoot({pokemons: PokemonReducer}),
+    EffectsModule.forRoot([PokemonEffects]),
+    StoreDevtoolsModule.instrument({maxAge: 15})
+  ],
+  providers: [PokemonService],
 })
 export class PokemonModule { }

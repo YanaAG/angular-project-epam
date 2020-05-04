@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Pokemon, PokemonService} from '../pokemon.service';
 import {ActivatedRoute} from '@angular/router';
+import * as fromPokemons from '../../@ngrx/pokemons';
+import {Pokemon} from '../../models/Pokemon';
+import { Store, select } from '@ngrx/store';
+import {PokemonState} from '../../@ngrx/app.state';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -9,15 +12,32 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class PokemonCardComponent implements OnInit {
   pokemon: Pokemon;
-  constructor(private pokemonService: PokemonService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private store: Store<PokemonState>) { }
 
   ngOnInit(): void {
-    this.getPokemon();
-  }
-
-  getPokemon(): void {
     const id = this.route.snapshot.params.id;
-    this.pokemon = this.pokemonService.getById(Number(id));
+    const pokemon$ = this.store.pipe(select(fromPokemons.PokemonById, { pokemon_id: id }));
+    pokemon$.subscribe(res => {
+      this.pokemon = res.data;
+    });
   }
 
+  updatePokemonInfo(): Pokemon {
+    const updatedPokemon: Pokemon = {
+      id: null,
+      name: '',
+      damage: null,
+      creationDate: null,
+      caught: false,
+    };
+    updatedPokemon.id = Number(this.pokemon.id);
+    updatedPokemon.name = this.pokemon.name;
+    updatedPokemon.damage = Number(this.pokemon.damage);
+    updatedPokemon.creationDate = new Date(this.pokemon.creationDate);
+    updatedPokemon.caught = !this.pokemon.caught;
+    return updatedPokemon;
+  }
+  updateCaught(): void {
+    this.store.dispatch(new fromPokemons.UpdatePokemon(this.updatePokemonInfo()));
+  }
 }

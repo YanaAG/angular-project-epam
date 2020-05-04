@@ -1,6 +1,9 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Pokemon, PokemonService} from '../pokemon.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Pokemon} from '../../models/Pokemon';
+import {select, Store} from '@ngrx/store';
+import * as fromPokemons from '../../@ngrx/pokemons';
+import {PokemonState} from '../../@ngrx/app.state';
 
 @Component({
   selector: 'app-pokemon-search',
@@ -10,7 +13,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class PokemonSearchComponent implements OnInit {
   pokemonName = '';
   @Output() filterPokemons = new EventEmitter<Pokemon[]>();
-  constructor(private pokemonService: PokemonService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  // tslint:disable-next-line:max-line-length
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private store: Store<PokemonState>) { }
 
   ngOnInit(): void {
     if (this.activatedRoute.snapshot.queryParams.pokemonName) {
@@ -19,13 +23,21 @@ export class PokemonSearchComponent implements OnInit {
     }
   }
   findPokemon(): void {
-    const pokemon = this.pokemonService.filter(this.pokemonName);
+    let pokemon = [];
+    const pokemon$ = this.store.pipe(select(fromPokemons.PokemonByName, { pokemon_name: this.pokemonName }));
+    pokemon$.subscribe(res => {
+      pokemon = res.data;
+    });
     this.addParameter(this.pokemonName);
     this.filter(pokemon);
   }
   clearInput(): void {
     this.pokemonName = '';
-    const pokemons = this.pokemonService.getAll();
+    let pokemons = [];
+    const pokemons$ = this.store.pipe(select(fromPokemons.allPokemons));
+    pokemons$.subscribe(res => {
+      pokemons = res.data;
+    });
     this.addParameter(null);
     this.filter(pokemons);
   }
