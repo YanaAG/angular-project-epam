@@ -1,5 +1,7 @@
 <button mat-stroked-button (click)="changeDisplay()">{{ buttonText }}</button>
 
+<app-pokemon-search (filterPokemons)="filter($event)"></app-pokemon-search>
+
 <mat-grid-list *ngIf="buttonText == 'TEXT LIST'" cols="4" rowHeight="420px">
   <mat-grid-tile *ngFor="let pokemon of pokemons">
         <mat-card appBorder [damage]="pokemon.damage" class="pokemon-card">
@@ -7,9 +9,11 @@
               <mat-card-title>{{ pokemon.name }}</mat-card-title>
               <mat-card-subtitle>Damage: {{ pokemon.damage }}</mat-card-subtitle>
           </div>
-          <img mat-card-image src="../../../assets/pokemons/{{ pokemon.id }}.png"  alt="Pokemon {{ pokemon.name }}">
-          <mat-card-actions>
-            <button #button mat-button (click)="printInConsole(button, pokemon.name)">СATCH</button>
+          <img routerLink="/pokemon/{{ pokemon.id }}" mat-card-image src="../../../assets/pokemons/{{ pokemon.id }}.png"  alt="Pokemon {{ pokemon.name }}">
+          <mat-card-actions class="buttons">
+            <button *ngIf="!pokemon.caught" #button mat-button (click)="printInConsole(button, pokemon)">СATCH</button>
+            <button *ngIf="pokemon.caught" #button mat-button (click)="printInConsole(button, pokemon)">LET GO</button>
+            <button routerLink="/edit/{{ pokemon.id }}" mat-button>EDIT</button>
           </mat-card-actions>
         </mat-card>
   </mat-grid-tile>

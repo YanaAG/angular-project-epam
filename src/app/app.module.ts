@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {PokemonModule} from './pokemon/pokemon.module';
+import {CoreModule} from './core/core.module';
+import {AppRoutingModule} from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,9 @@ import {PokemonModule} from './pokemon/pokemon.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    PokemonModule
+    PokemonModule,
+    CoreModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

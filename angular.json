@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "angular-project-epam"
+  "defaultProject": "angular-project-epam",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
